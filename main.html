@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Basic Banking System</title>
+    <link rel="stylesheet" href="D:\project\spark\script.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+    <!--logo-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body onload="loader()">
+
+    <!-- loader for splash screen -->
+    <div id="loading"></div>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"="true"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>-->
+                        <a class="nav-link" href="D:\project\spark\main.html">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\project\spark\customer.html">View Customers & Transfer History</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\project\spark\datab.html" >About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!--banner section-->
+    <section id="main" class="coloured-section">
+        <div class="container">
+           
+            <h1>
+                 Welcome To IES Bank!!
+                <img src=data:image/png;base64,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 width="100px" height="100px">
+            </h1>
+        </div>
+    </section>
+
+
+
+    <section id="features" class="white-section">
+        <button type="button" class="btn btn-dark btn-lg download-button">
+        <h4 class="main">IES Bank </h4>
+      </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-dark btn-lg download-button"><h4 class="text">How Can We Help You??</h4></button><br>
+        <br>
+        <a href="D:\project\spark\customer.html"><button type="button" class="btn btn-dark btn-lg download-button"></i>View Customers</button></a>
+        <a href="D:\project\spark\customer.html"><button type="button" class="btn btn-dark btn-lg download-button"></i> Transfer History</button></a>
+    </section>
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="footer" class="coloured-section">
+        <p>FIND US ON SOCIAL MEDIA</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <i class="social-icon fa fa-facebook-square" aria-hidden></i>
+        <i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+        <i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+        <i class="social-icon fa fa-linkedin" aria-hidden="true"></i>
+        <p>Address- 3rd Flr, Scheme no 73, Dhan trident Blk No B3, Vijay nagar square, AB Rd, Indore, Madhya Pradesh 452010
+            <p>
+                <p>© Copyright 2023</p>
+    </footer>
+    <script>
+        var preloader = document.getElementById("loading");
+
+        function loader() {
+            preloader.style.display = 'none';
+        }
+    </script>
+
+    <script src="D:\project\spark\script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+        });
+    </script>
+</body>
+
+</html>
